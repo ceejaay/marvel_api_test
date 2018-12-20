@@ -1,0 +1,23 @@
+{
+  "name": "marvel_api_test",
+  "version": "1.0.0",
+  "description": "Test marvel api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ceejaay/marvel_api_test.git"
+  },
+  "author": "Chad Jemmett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ceejaay/marvel_api_test/issues"
+  },
+  "homepage": "https://github.com/ceejaay/marvel_api_test#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "md5": "^2.2.1"
+  }
+}
