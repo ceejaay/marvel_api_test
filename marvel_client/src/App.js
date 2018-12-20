@@ -10,7 +10,18 @@ class App extends Component {
       this.state = {
         comics: [],
         opts: 'series/1987',
+        issue: []
       }
+  }
+
+  getComics = (link) => {
+    const ts = Date.now()
+    const hash = md5(ts + privateKey + publicKey)
+    axios.get(`${link}?apikey=${publicKey}&hash=${hash}&ts=${ts}`)
+    .then(response => {
+      this.setState({issue: response.data.data})
+    })
+    .catch(error => console.log(error))
   }
 
   componentDidMount() {
@@ -27,8 +38,8 @@ class App extends Component {
     if(this.state.comics.length > 0) {
       return (
           <div>
-          {this.state.comics.map(item => (
-            <p>{item.name}</p>
+          {this.state.comics.map((item, idx) => (
+            <p onClick={this.getComics(item.resourceURI)} key={idx}>{item.name}</p>
           ))}
           </div>
           )
